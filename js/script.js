@@ -13,5 +13,13 @@ window.addEventListener('DOMContentLoaded', () => {
    cards();
    calc();
    forms('form');
-   slider();
+   slider({
+      container: '.offer__slider',
+      nextArrow: '.offer__slider-next',
+      prevArrow: '.offer__slider-prev',
+      slide: '.offer__slide',
+      
+
+
+   });
 });
