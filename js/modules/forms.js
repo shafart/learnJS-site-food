@@ -35,17 +35,17 @@ function forms(formSelector) {
             postData('http://localhost:3000/requests', json)
             .then(data => {
                 console.log(data);
-                showThansModal(message.success);
+                showThankModal(message.success);
                 statusMessage.remove();
             }).catch(() => {
-                showThansModal(message.failure);
+                showThankModal(message.failure);
             }).finally(() => {
                 form.reset();
             });
         });
     };
 
-    function showThansModal(message) {
+    function showThankModal(message) {
         const prevModalDialog = document.querySelector('.modal__dialog');
 
         prevModalDialog.classList.add('hide');
@@ -67,6 +67,8 @@ function forms(formSelector) {
             closeModal('.modal');
         }, 4000);
     };
+
+
 }
 
 export default forms;

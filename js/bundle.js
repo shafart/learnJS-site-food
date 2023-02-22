@@ -244,17 +244,17 @@ function forms(formSelector) {
             (0,_services_services__WEBPACK_IMPORTED_MODULE_1__.postData)('http://localhost:3000/requests', json)
             .then(data => {
                 console.log(data);
-                showThansModal(message.success);
+                showThankModal(message.success);
                 statusMessage.remove();
             }).catch(() => {
-                showThansModal(message.failure);
+                showThankModal(message.failure);
             }).finally(() => {
                 form.reset();
             });
         });
     };
 
-    function showThansModal(message) {
+    function showThankModal(message) {
         const prevModalDialog = document.querySelector('.modal__dialog');
 
         prevModalDialog.classList.add('hide');
@@ -276,6 +276,8 @@ function forms(formSelector) {
             (0,_modal__WEBPACK_IMPORTED_MODULE_0__.closeModal)('.modal');
         }, 4000);
     };
+
+
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (forms);
@@ -324,6 +326,7 @@ function modal(triggerSelector, modalSelector) {
         }
     });
 
+
     document.addEventListener('keydown', (e) => {
         if (e.code === "Escape" && modal.classList.contains('show')) {
             closeModal(modalSelector);
@@ -352,10 +355,10 @@ function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCo
           slider = document.querySelector(container),
           prev = document.querySelector(prevArrow),
           next = document.querySelector(nextArrow),
-          total = document.querySelector('#total'),
-          current = document.querySelector('#current'),
-          slidesWrapper = document.querySelector('.offer__slider-wrapper'),
-          slidesField = document.querySelector('.offer__slider-inner'),
+          total = document.querySelector(totalCounter),
+          current = document.querySelector(currentCounter),
+          slidesWrapper = document.querySelector(wrapper),
+          slidesField = document.querySelector(field),
           width = window.getComputedStyle(slidesWrapper).width;
     let slideIndex = 1;
     let offset = 0;
@@ -747,9 +750,10 @@ window.addEventListener('DOMContentLoaded', () => {
       nextArrow: '.offer__slider-next',
       prevArrow: '.offer__slider-prev',
       slide: '.offer__slide',
-      
-
-
+      totalCounter: '#total',
+      currentCounter: '#current',
+      wrapper: '.offer__slider-wrapper',
+      field: '.offer__slider-inner'     
    });
 });
 })();
